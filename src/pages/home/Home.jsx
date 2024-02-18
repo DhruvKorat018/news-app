@@ -43,6 +43,7 @@ const Home = () => {
             const fetchedNewsData = await apiCall();
             const newsDataString = JSON.stringify(fetchedNewsData);
             localStorage.setItem('newsData', newsDataString);
+            localStorage.setItem('newsDataSearched', newsDataString);
         }
 
         Object.keys(searchedData).length == 0 ? fetchedNewsData && setNewsData(fetchedNewsData) : setNewsData(searchedData);
